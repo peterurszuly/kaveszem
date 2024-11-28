@@ -1,0 +1,119 @@
+<!DOCTYPE HTML>
+<HTML lang="hu">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Urszuly Péter">
+    <meta name="description" content="A Kávészem.Bt árazását leíró oldal.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style2.css">
+    <title>Kávészem.bt</title>
+    <link rel="icon" type="image/x-icon" href="../kepek/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gabriela&display=swap" rel="stylesheet">
+    <script src="../jquery-3.7.1.min"></script>
+    <link rel="stylesheet" type="text/css" href="../slick-1.8.1/slick/slick.css">
+    <link rel="stylesheet" type="text/css" href="../slick-1.8.1/slick/slick-theme.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div>
+        <nav>
+            <input type="checkbox" id="check" class="checkboxnone">
+            <label for="check" class="checkbtn">
+                <img src="../kepek/hamburger.png" alt="hamburgermenu" class="hamburger">
+            </label>
+            <img class="navlogo" src="../kepek/logo_kivagott.png" alt="logo">
+            <p class="menucim">Kávészem Bt.</p>
+            <div class="nav-mobile">
+                <a href="../html/index.html">Cégünkről</a>
+                <a href="../html/szolgaltatasok.html">Szolgáltatások</a>
+                <a class="active" href="#">Árazás</a>
+                <a href="../html/kapcsolatok.html">Kalkulátor</a>
+            </div>
+        </nav>
+
+        <div class="container">
+            <article>
+                <h3 class="cikkcim">Egyedi árazás igényekhez mérten</h3>
+                <p class="tartalom">A kávéfogyasztási szokások és preferenciák minden vállalkozásban egyediek, ezért
+                    kínálunk testreszabott árazást az Ön igényeire szabva. Árazási modellünk több tényezőt is figyelembe
+                    vesz: a választott kávéfajtát, a preferált kávégépet, valamint a napi kávéfogyasztás mértékét.
+                    Legyen szó prémium minőségű kávéról vagy költséghatékony megoldásról, mi rugalmas ajánlatokkal
+                    állunk rendelkezésére.</p>
+
+                <p class="tartalom">Akár kisebb mennyiségű kávéra van szüksége, akár nagyobb léptékben gondolkodik,
+                    szakértő csapatunk segít a legmegfelelőbb megoldást megtalálni, amely egyszerre illeszkedik az Ön
+                    üzleti igényeihez és költségvetéséhez. Kérjen ajánlatot, és mi személyre szabjuk az árainkat, hogy
+                    mindig a legjobb értéket kapja!</p>
+                <p class="tartalom"> Kérjen egyedi ajánlatot most! <br><br> Az <a class="hivatkozas" href="../html/kapcsolatok.html">alábbi
+                        kérdőív</a> kitöltésével megtudhatja önnek melyik kávégép illetve melyik kávé a tökéletes
+                    választás!</p>
+                <img src="../kepek/orles.webp" alt="kávéörles" class="kep">
+                <br>
+                <hr>
+            </article>
+        </div>
+        <h2 class="cikkcim">Elérhető kávégépeink</h2>
+        <article class="container">
+            <section class="center slider2">
+                <div><img src="../kepek/Astoria-Forma-Sae-2_1-.png.webp" alt="kep1" title="kepcim1"></div>
+                <div><img src="../kepek/Astoria-Forma-Sae-1_2.png.webp" alt="kep2" title="kepcim2"></div>
+                <div><img src="../kepek/PHEDRA-EVO-FRONT-ANGLE-SHOT.jpg.webp" alt="kep3" title="kepcim3"></div>
+                <div><img src="../kepek/gemini_2.jpg" alt="kep4" title="kepcim4"></div>
+                <div><img src="../kepek/nespresso_1.jpg" alt="kep5" title="kepcim5"></div>
+                <div><img src="../kepek/saeco_royal.webp" alt="kep6" title="kepcim6"></div>
+                <div><img src="../kepek/saeco-family-digital.jpg" alt="kep7" title="kepcim7"></div>
+            </section>
+        </article>
+    </div>
+
+    <footer>
+        <p class="nagy">Elérhetőségeink:</p><br>
+        <p class="kicsi ">E-mail: kaveszem@gmail.com <br>
+            Telefon: +36 20-111-8244</p>
+        <p>Ez az oldal pusztán gyakorlásra szolgál</p>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js">
+    </script>
+    <script src="../slick-1.8.1/slick/slick.js">
+    </script>
+    <script>
+        $(document).ready(function () {
+            $(".center").slick({
+                dots: true,
+                infinite: true,
+                centerMode: true,
+                centerPadding: '60px',
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 2000,
+                responsive: [
+                    {
+                        breakpoint: 768,
+                        settings: {
+                            arrows: false,
+                            centerPadding: '100px',
+                            slidesToShow: 1
+                        }
+                    },
+                    {
+                        breakpoint: 600,
+                        settings: {
+                            arrows: false,
+                            centerPadding: '0px',
+                            slidesToShow: 1
+                        }
+                    }
+                ]
+            });
+        });
+    </script>
+</body>
+
+</HTML>
