@@ -41,8 +41,30 @@
 					<label class="textcim2" for="nev">Név:</label><br>
 					<input class="textbox2" type="text" id="nev" name="nev" size="40">
 					<br>
+					<label class="textcim2" for="tel">Telefon:</label><br>
+					<input class="textbox2" type="tel" id="tel" name="tel" size="40">
+					<br>
 					<label class="textcim2" for="email">E-Mail:</label><br>
 					<input class="textbox2" type="email" name="email" id="email" size="40">
+					<br>
+
+
+					<label class="check2" for="robot">Nem vagyok robot!</label>
+					<input type="checkbox" data-toggle="toggle" data-onstyle="danger" data-offstyle="success"
+						name="nem_robot" id="robot" class="check">
+					<br>
+					<div id="robotos">
+						<img class="kep" src="../kepek/piros kocsi.jpg" alt="Piros kocsi">
+						<br>
+						<label class="check2" for="kocsi">Milyen színű a kocsi?</label>
+
+						<select name="szin" size="1" id="kocsi">
+							<option value="Kék">Kék</option>
+							<option value="Piros">Piros</option>
+							<option value="Zöld">Zöld</option>
+							<option value="Rózsaszín">Rózsaszín</option>
+						</select>
+					</div>
 					<div>
 						<p class="textcim">Ügyféltípus:</p>
 						<p class="hatterurlap">
@@ -60,15 +82,12 @@
 					<br>
 					<br>
 					<hr>
-					<br>
-					<label class="textcim2" id="ado_label" for="ado">Cégnév:</label>
-					<input class="textbox2" type="text" name="cegnev" id="ado" size="40">
 				</div>
 				<div id="divceg" class="elso_div">
 					<p class="textcim">Milyen típusú kávégépet szeretne?</p>
 					<p class="hatterurlap">
 						<label class="label1">
-							<input type="radio" name="gép" value="örlős" id="hagyomanyos" checked>
+							<input type="radio" name="gép" value="örlős" id="hagyomanyos">
 							Hagyományos kávégépet
 						</label>
 						<br>
@@ -84,7 +103,7 @@
 					<p class="textcim">Milyen környezetben szeretné használni a kávégépet?</p>
 					<p class="hatterurlap">
 						<label class="label1">
-							<input type="radio" name="tipus" value="kavezo" id="kavezo" checked>
+							<input type="radio" name="tipus" value="kavezo" id="kavezo">
 							Kávézó, étterem</label>
 						<br>
 						<label class="label1">
@@ -103,7 +122,7 @@
 					<p class="textcim">Milyen kávét szeretne a gépekbe?</p>
 					<p class="hatterurlap">
 						<label class="label">
-							<input type="radio" name="kave" value="Omnia Classic" id="omnia" checked>
+							<input type="radio" name="kave" value="Omnia Classic" id="omnia">
 							Omnia Classic</label>
 						<br>
 						<label class="label1">
@@ -143,14 +162,12 @@
 					<p class="kikalkulalt">
 						Az ön által választott kávé: <input type="text" size="25" id="kave">
 					</p>
-					<input class="button_kuld" type="submit" value="Árajánlat kérése emailban"> <input
-						class="button_torol" type="reset" value="Töröl">
 				</div>
 				<div id="divmagan" class="elso_div">
 					<p class="textcim">Milyen típusú kávégépet szeretne?</p>
 					<p class="hatterurlap">
 						<label class="label1">
-							<input type="radio" name="gépmagan" value="örlős" id="hagyomanyosmagan" checked>
+							<input type="radio" name="gépmagan" value="örlős" id="hagyomanyosmagan">
 							Hagyományos kávégépet
 						</label>
 						<br>
@@ -162,7 +179,7 @@
 					<p class="textcim">Milyen kávét szeretne a gépekbe?</p>
 					<p class="hatterurlap">
 						<label class="label">
-							<input type="radio" name="kavemagan" value="Omnia Classic" id="omniamagan" checked>
+							<input type="radio" name="kavemagan" value="Omnia Classic" id="omniamagan">
 							Omnia Classic</label>
 						<br>
 						<label class="label1">
@@ -202,10 +219,10 @@
 					<p class="kikalkulalt">
 						Az ön által választott kávé: <input type="text" size="35" id="kavemagan">
 					</p>
-					<input class="button_kuld" type="submit" value="Árajánlat kérése emailban"> <input
-						class="button_torol" type="reset" value="Töröl">
-				</div>
 
+				</div>
+				<input class="button_kuld" type="submit" value="Árajánlat kérése emailban"> <input class="button_torol"
+					type="reset" value="Töröl">
 			</form>
 		</div>
 	</div>
@@ -223,42 +240,38 @@
 	</script>
 	<script>
 		$(document).ready(function () {
+			$('#myform').on('submit', function (event) {
+				// Ellenőrizzük, hogy a "Piros" szín van-e kiválasztva
+				if ($('#kocsi').val() !== 'Piros') {
+					alert('Nem olyan sznű a kocsi!');
+					event.preventDefault();  // Megakadályozzuk az űrlap elküldését
+				}
+			});
 			$("#myform").validate({
 				rules: {
 					nev: "required"
-					,
-					cegnev: "required"
 					,
 					email: {
 						required: true,
 						email: true,
 					},
-					kave: "required"
-					,
-					tipus: "required"
-					,
-					gépmagan: "required"
-					,
-					kavemagan: "required"
+					tel: {
+						required: true,
+						tel: true,
+					},
+					nem_robot: "required"
 					,
 				},
 				messages: {
-					nev: " Írd be a keresztneved!"
+					nev: "Írd be a nevedet!"
 					,
-					cegnev: " Írd be a cég nevét!"
+					tel: "Írd be a telefonszámodat!"
 					,
-					email: " Kérlek valós email címet adj meg!"
+					email: "Kérlek valós email címet adj meg!"
 					,
-					kave: "Kérlek jelölj ki egyet!"
+					nem_robot: "Biztos robot vagy?"
 					,
-					tipus: "Kérlek jelölj ki egyet!"
-					,
-					gépmagan: "Kérlek jelölj ki egyet!"
-					,
-					kavemagan: "Kérlek jelölj ki egyet!"
-					,
-				},
-
+				}
 			});
 		});
 	</script>

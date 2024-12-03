@@ -7,20 +7,22 @@ document.getElementById("maganszemelynek").addEventListener
 document.getElementById("cegnek").addEventListener
     ("click", ceg);
 
+let checkbox = document.querySelector("input[id=robot]");
+checkbox.addEventListener('change', function () {
+    if (this.checked) {
+        document.getElementById("robotos").style.display = "block";
+    } else {
+        document.getElementById("robotos").style.display = "none";
+    }
+});
+
 function ceg() {
-    document.getElementById("ado").style.display = "block";
-    document.getElementById("ado").value = "";
     document.getElementById("divceg").style.display = "block";
-    document.getElementById("ado_label").style.display = "block";
     document.getElementById("divmagan").style.display = "none";
 }
 
 function magan() {
-    document.getElementById("ado").style.display = "none";
-    document.getElementById("ado").value = "maganszemely";
-    document.getElementById("ado").style.display = "none";
     document.getElementById("divceg").style.display = "none";
-    document.getElementById("ado_label").style.display = "none";
     document.getElementById("divmagan").style.display = "block";
 }
 
@@ -87,8 +89,8 @@ function kavegepmagan() {
             document.getElementById("kavemagan").value = "Nespresso kapszulák"
         }
 
-        if (document.getElementById("hagyomanyosmagan").checked) 
-            {if (document.getElementById("dbmagan").value <= 5) {
+        if (document.getElementById("hagyomanyosmagan").checked) {
+            if (document.getElementById("dbmagan").value <= 5) {
                 document.getElementById("eredmenymagan").value = "Saeco Family"
                 if (document.getElementById("omniamagan").checked) { document.getElementById("kavemagan").value = "Omnia Classic" }
                 if (document.getElementById("jacobsmagan").checked) { document.getElementById("kavemagan").value = "Jacobs Krönung" }

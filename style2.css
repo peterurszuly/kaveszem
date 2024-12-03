@@ -3,15 +3,14 @@
 }
 
 html {
-    padding: 0px;
-    margin: 0px;
-    min-height: 270px;
+    padding: 0;
+    margin: 0;
 }
 
 body {
     background-color: rgb(255, 255, 255);
-    padding: 0px;
-    margin: 0px;
+    padding: 0;
+    margin: 0;
     font-family: "DM Serif Text", serif;
     font-weight: 400;
     font-style: normal;
@@ -21,13 +20,12 @@ body {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
-.container>* {
-	height: fit-content;
-}
 /*nav és hamburger menü*/
 nav {
+    margin: 0;
     padding: 15px 25px;
     background-color: rgb(85,107,47);
     color: #fff;
@@ -62,11 +60,10 @@ nav {
 }
 .nav-mobile {
     position: absolute;
-    top: 4.5rem;
+    top: 85.5px;
     left: 0;
     background-color: rgb(19, 30, 1);
-    z-index: 1;
-    width: 150px;
+    flex-basis: 150px;
 }
 .nav-mobile a {
     color: #fff;
@@ -104,17 +101,15 @@ nav {
     text-align: justify;
     padding: 0;
 }
-.kep {
-    display: flex;
+.kep{
     margin: 0 10% 30px 10%;
     width: 80%;
-    height: auto;
     padding: 0;
     border-radius: 15px;
 }
 hr{
     background-color: black;
-    width: 80%;
+    flex-basis: 80%;
     height: 1px;
 }
 .hivatkozas{
@@ -165,10 +160,21 @@ footer{
 .textbox2{
     margin-top: 0;
     margin-bottom: 20px;
-    margin-right: 5%;
     margin-left: 5%;
     padding: 0;
-    width: 90%;
+    flex-basis: 90%;
+}
+.check{
+    padding: 0;
+    margin: 0;
+
+}
+.check2{
+    padding: 0;
+    margin: 0 0 0 5%;
+}
+#robotos{
+    display: none;
 }
 
 .hatterurlap{
@@ -178,20 +184,30 @@ footer{
     border-radius: 0 4px 4px 4px;
 }
 .elso_div{
-    margin: 0;
-    margin-bottom: 2%;
-    margin-top: 8%;
+    margin: 2% 0 8% 0;
 }
+
 input[type="radio"]{
     margin: 10px 3px;
+    border: black 1px solid;
 }
 input[type="text"]{
     height: 30px;
-    width: 70%;
+    width: 90%;
+    margin-right: -90%;
+    border: black 1px solid;
 }
 input[type="email"]{
     height: 30px;
-    width: 70%;
+    width: 90%;
+    margin-right: -90%;
+    border: black 1px solid;
+}
+input[type="tel"]{
+    height: 30px;
+    width: 90%;
+    margin-right: -90%;
+    border: black 1px solid;
 }
 #divmagan{
     display: none;
@@ -276,6 +292,8 @@ input[type="email"]{
     margin: 15px 30%;
 }
 .kikalkulalt{
+    display: flex;
+    flex-direction: column;
     padding: 20px;
     margin: 30px 5%;
     background-color: rgba(19, 30, 1, 0.3);
@@ -288,12 +306,7 @@ input[type="email"]{
 }
 
 .slick-slide img {
-    width: 100%;
-}
-
-.slick-prev:before,
-.slick-next:before {
-    color: black;
+    flex-basis: 100%;
 }
 
 .slick-slide {
@@ -310,14 +323,12 @@ input[type="email"]{
 }
 
 .slider2 {
-    width: 80%;
+    flex-basis: 80%;
     min-width: 350px;
     margin: 100px auto;
 }
 .slick-slide {margin: 0px 5px;}
-.slick-slide img {width: 100%;}
-.slick-prev:before, .slick-next:before {
-    color: black;
+.slick-slide img {width: 100%;
 }
 .slick-slide {
     transition: all ease-in-out .3s;
@@ -327,7 +338,8 @@ input[type="email"]{
 .slick-current { opacity: 1; }
 
 label.error {
-    margin-left: 30%;
+    padding: 0;
+    margin: 0;
     color: #FB3A3A;
     }
 @media all and (min-width: 600px) {
@@ -348,8 +360,9 @@ label.error {
         width: 60%;
     }
     hr{
-        width: 70%;
+        flex-basis: 70%;
     }
+    
 }
 
 @media all and (min-width: 768px) {
@@ -361,7 +374,7 @@ label.error {
         margin-bottom: 20px;
         margin-right: 15%;
         margin-left: 15%;
-        width: 90%;
+        flex-basis: 90%;
     }
     
     .hatterurlap{
@@ -375,15 +388,32 @@ label.error {
         margin: 40px 70% 0 15%;
     }   
     hr{
-        width: 60%;
+        flex-basis: 60%;
     }
     .tartalom{
         margin-left: 30%;
         margin-right: 30%;
     }
+
     .kep{
-        margin-left: 25%;
-        margin-right: 25%;
-        width: 50%;
+        margin-left: 30%;
+        margin-right: 30%;
+        width: 40%;
+    }
+    input[type="text"]{
+        width: 70%;
+        margin-right: -70%;
+    }
+    input[type="email"]{
+        width: 70%;
+        margin-right: -70%;
+    }
+    input[type="tel"]{
+        width: 70%;
+        margin-right: -70%;
+    }
+    .check2{
+        padding: 0;
+        margin: 0 0 0 15%;
     }
 }
