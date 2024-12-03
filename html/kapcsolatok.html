@@ -34,7 +34,7 @@
 	</nav>
 	<div>
 		<div>
-			<form id="myform" action="https://rf.uni-corvinus.hu/webfejlesztes/receive.php" method="post">
+			<form id="myform" action="https://rf.uni-corvinus.hu/webfejlesztes/receive.php" method="post" novalidate>
 
 				<div class="elso_div">
 					<h2 class="cikkcim">Kalkulátor</h2>
@@ -42,7 +42,7 @@
 					<input class="textbox2" type="text" id="nev" name="nev" size="40">
 					<br>
 					<label class="textcim2" for="tel">Telefon:</label><br>
-					<input class="textbox2" type="tel" id="tel" name="tel" size="40">
+					<input class="textbox2" type="tel" id="tel" name="telefon" size="40">
 					<br>
 					<label class="textcim2" for="email">E-Mail:</label><br>
 					<input class="textbox2" type="email" name="email" id="email" size="40">
@@ -59,6 +59,7 @@
 						<label class="check2" for="kocsi">Milyen színű a kocsi?</label>
 
 						<select name="szin" size="1" id="kocsi">
+							<option value=""></option>
 							<option value="Kék">Kék</option>
 							<option value="Piros">Piros</option>
 							<option value="Zöld">Zöld</option>
@@ -236,31 +237,25 @@
 	</script>
 	<script src="https://code.jquery.com/jquery-3.7.1.min.js">
 	</script>
-	<script src="../jquery-validation-1/dist/jquery.validate.min.js">
+	<script src="../jquery.validate.min.js">
 	</script>
 	<script>
 		$(document).ready(function () {
-			$('#myform').on('submit', function (event) {
-				// Ellenőrizzük, hogy a "Piros" szín van-e kiválasztva
-				if ($('#kocsi').val() !== 'Piros') {
-					alert('Nem olyan sznű a kocsi!');
-					event.preventDefault();  // Megakadályozzuk az űrlap elküldését
-				}
-			});
 			$("#myform").validate({
 				rules: {
 					nev: "required"
 					,
 					email: {
 						required: true,
-						email: true,
+						email: false,
 					},
-					tel: {
+					telefon: {
 						required: true,
-						tel: true,
+						tel: false,
 					},
 					nem_robot: "required"
 					,
+					szin: "required"
 				},
 				messages: {
 					nev: "Írd be a nevedet!"
@@ -271,7 +266,9 @@
 					,
 					nem_robot: "Biztos robot vagy?"
 					,
+					szin: "Adja meg a kocsi színét!"
 				}
+				
 			});
 		});
 	</script>
