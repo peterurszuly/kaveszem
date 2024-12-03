@@ -240,13 +240,6 @@
 	</script>
 	<script>
 		$(document).ready(function () {
-			$('#myform').on('submit', function (event) {
-				// Ellenőrizzük, hogy a "Piros" szín van-e kiválasztva
-				if ($('#kocsi').val() !== 'Piros') {
-					alert('Nem olyan sznű a kocsi!');
-					event.preventDefault();  // Megakadályozzuk az űrlap elküldését
-				}
-			});
 			$("#myform").validate({
 				rules: {
 					nev: "required"
@@ -271,6 +264,14 @@
 					,
 					nem_robot: "Biztos robot vagy?"
 					,
+				}
+				
+			});
+			$('#myform').on('submit', function (event) {
+				// Ellenőrizzük, hogy a "Piros" szín van-e kiválasztva
+				if ($('#kocsi').val() !== 'Piros') {
+					alert('Nem olyan sznű a kocsi!');
+					event.preventDefault();  // Megakadályozzuk az űrlap elküldését
 				}
 			});
 		});
