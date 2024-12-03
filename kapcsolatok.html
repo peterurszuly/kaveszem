@@ -1,0 +1,280 @@
+<!DOCTYPE HTML>
+<HTML lang="hu">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="author" content="Urszuly Péter">
+	<meta name="description" content="A Kávészem.Bt árajánlat kérésének leggyorsabb opciója.">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../style2.css">
+	<title>Kávészem.bt</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="icon" type="image/x-icon" href="../kepek/favicon.ico">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Gabriela&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap" rel="stylesheet">
+</head>
+
+<body>
+	<nav>
+		<input type="checkbox" id="check" class="checkboxnone">
+		<label for="check" class="checkbtn">
+			<img src="../kepek/hamburger.png" alt="hamburgermenu" class="hamburger">
+		</label>
+		<img class="navlogo" src="../kepek/logo_kivagott.png" alt="logo">
+		<p class="menucim">Kávészem Bt.</p>
+		<div class="nav-mobile">
+			<a href="../index.html">Cégünkről</a>
+			<a href="../html/szolgaltatasok.html">Szolgáltatások</a>
+			<a href="../html/arazas.html">Árazás</a>
+			<a class="active" href="#">Kalkulátor</a>
+		</div>
+	</nav>
+	<div>
+		<div>
+			<form id="myform" action="https://rf.uni-corvinus.hu/webfejlesztes/receive.php" method="post">
+
+				<div class="elso_div">
+					<h2 class="cikkcim">Kalkulátor</h2>
+					<label class="textcim2" for="nev">Név:</label><br>
+					<input class="textbox2" type="text" id="nev" name="nev" size="40">
+					<br>
+					<label class="textcim2" for="tel">Telefon:</label><br>
+					<input class="textbox2" type="tel" id="tel" name="tel" size="40">
+					<br>
+					<label class="textcim2" for="email">E-Mail:</label><br>
+					<input class="textbox2" type="email" name="email" id="email" size="40">
+					<br>
+
+
+					<label class="check2" for="robot">Nem vagyok robot!</label>
+					<input type="checkbox" data-toggle="toggle" data-onstyle="danger" data-offstyle="success"
+						name="nem_robot" id="robot" class="check">
+					<br>
+					<div id="robotos">
+						<img class="kep" src="../kepek/piros kocsi.jpg" alt="Piros kocsi">
+						<br>
+						<label class="check2" for="kocsi">Milyen színű a kocsi?</label>
+
+						<select name="szin" size="1" id="kocsi">
+							<option value="Kék">Kék</option>
+							<option value="Piros">Piros</option>
+							<option value="Zöld">Zöld</option>
+							<option value="Rózsaszín">Rózsaszín</option>
+						</select>
+					</div>
+					<div>
+						<p class="textcim">Ügyféltípus:</p>
+						<p class="hatterurlap">
+							<label class="label1">
+								<input type="radio" name="ugyfeltipus" value="ceg" id="cegnek" checked>
+								Cég
+							</label>
+							<br>
+							<label class="label1">
+								<input type="radio" name="ugyfeltipus" value="maganszemely" id="maganszemelynek">
+								Magánszemély
+							</label>
+						</p>
+					</div>
+					<br>
+					<br>
+					<hr>
+				</div>
+				<div id="divceg" class="elso_div">
+					<p class="textcim">Milyen típusú kávégépet szeretne?</p>
+					<p class="hatterurlap">
+						<label class="label1">
+							<input type="radio" name="gép" value="örlős" id="hagyomanyos">
+							Hagyományos kávégépet
+						</label>
+						<br>
+						<label class="label1">
+							<input type="radio" name="gép" value="kapszulás" id="kapszulas">
+							Kapszulás kávégépet
+						</label>
+						<br>
+						<label class="label1">
+							<input type="radio" name="gép" value="italautomata" id="automata">
+							Italautómatát</label>
+					</p>
+					<p class="textcim">Milyen környezetben szeretné használni a kávégépet?</p>
+					<p class="hatterurlap">
+						<label class="label1">
+							<input type="radio" name="tipus" value="kavezo" id="kavezo">
+							Kávézó, étterem</label>
+						<br>
+						<label class="label1">
+							<input type="radio" name="tipus" value="dolgozok" id="dolgozoknak">
+							Dolgozók kávéztatása
+						</label>
+						<br>
+						<label class="label1">
+							<input type="radio" name="tipus" value="rendezveny" id="rendezvenyek">
+							Rendezvényeken</label>
+						<br>
+						<label class="label1">
+							<input type="radio" name="tipus" value="kisbolt" id="kisbolt">
+							Kisbolt, dohánybolt </label>
+					</p>
+					<p class="textcim">Milyen kávét szeretne a gépekbe?</p>
+					<p class="hatterurlap">
+						<label class="label">
+							<input type="radio" name="kave" value="Omnia Classic" id="omnia">
+							Omnia Classic</label>
+						<br>
+						<label class="label1">
+							<input type="radio" name="kave" value="Jacobs Krönung" id="jacobs">
+							Jacobs Krönung</label>
+						<br>
+						<label class="label1">
+							<input type="radio" name="kave" value="Segafredo Intermezzo" id="segafredo">
+							Segafredo Intermezzo</label>
+						<br>
+						<label class="label1">
+							<input type="radio" name="kave" value="Piazza d'Oro Intenso" id="piazza">
+							Piazza d'Oro Intenso</label>
+						<br>
+						<label class="label1">
+							<input type="radio" name="kave" value="Specialty kávék" id="Specialty">
+							Specialty kávék
+						</label>
+						<br>
+					</p>
+					<p class="textcim">Napi hány kávé fogy önöknél átlagosan?
+					</p>
+					<p class="hatterurlap">
+						<input type="range" value="50" min="1" max="150" class="slider" id="db"
+							oninput="this.nextElementSibling.value = this.value">
+						<output class="ertek">50</output>
+						<br>
+					</p>
+					<br>
+					<p>
+						<input class="button_kuld" type="button" value="Ideális gép kikalkulása!" id="mybutton">
+					</p>
+					<p class="kikalkulalt">
+						Önnek a legmegfelelőbb kávégépünk: <input type="text" size="25" id="eredmeny"
+							name="idealis_gep">
+					</p>
+					<p class="kikalkulalt">
+						Az ön által választott kávé: <input type="text" size="25" id="kave">
+					</p>
+				</div>
+				<div id="divmagan" class="elso_div">
+					<p class="textcim">Milyen típusú kávégépet szeretne?</p>
+					<p class="hatterurlap">
+						<label class="label1">
+							<input type="radio" name="gépmagan" value="örlős" id="hagyomanyosmagan">
+							Hagyományos kávégépet
+						</label>
+						<br>
+						<label class="label1">
+							<input type="radio" name="gépmagan" value="kapszulás" id="kapszulasmagan">
+							Kapszulás kávégépet
+						</label>
+					</p>
+					<p class="textcim">Milyen kávét szeretne a gépekbe?</p>
+					<p class="hatterurlap">
+						<label class="label">
+							<input type="radio" name="kavemagan" value="Omnia Classic" id="omniamagan">
+							Omnia Classic</label>
+						<br>
+						<label class="label1">
+							<input type="radio" name="kavemagan" value="Jacobs Krönung" id="jacobsmagan">
+							Jacobs Krönung</label>
+						<br>
+						<label class="label1">
+							<input type="radio" name="kavemagan" value="Segafredo Intermezzo" id="segafredomagan">
+							Segafredo Intermezzo</label>
+						<br>
+						<label class="label1">
+							<input type="radio" name="kavemagan" value="Piazza d'Oro Intenso" id="piazzamagan">
+							Piazza d'Oro Intenso</label>
+						<br>
+						<label class="label1">
+							<input type="radio" name="kavemagan" value="Specialty kávék" id="Specialtymagan">
+							Specialty kávék
+						</label>
+						<br>
+					</p>
+					<p class="textcim">Napi hány kávé fogy önöknél átlagosan?
+					</p>
+					<p class="hatterurlap">
+						<input type="range" value="5" min="1" max="15" class="slidermagan" id="dbmagan"
+							oninput="this.nextElementSibling.value = this.value">
+						<output class="ertekmagan">7</output>
+						<br>
+					</p>
+					<br>
+					<p>
+						<input class="button_kuld" type="button" value="Ideális gép kikalkulása!" id="mybuttonmagan">
+					</p>
+					<p class="kikalkulalt">
+						Önnek a legmegfelelőbb kávégépünk: <input type="text" size="35" id="eredmenymagan"
+							name="idealis_gepmagan">
+					</p>
+					<p class="kikalkulalt">
+						Az ön által választott kávé: <input type="text" size="35" id="kavemagan">
+					</p>
+
+				</div>
+				<input class="button_kuld" type="submit" value="Árajánlat kérése emailban"> <input class="button_torol"
+					type="reset" value="Töröl">
+			</form>
+		</div>
+	</div>
+	<footer>
+		<p class="nagy">Elérhetőségeink:</p><br>
+		<p class="kicsi ">E-mail: kaveszem@gmail.com <br>
+			Telefon: +36 20-111-8244</p>
+		<p>Ez az oldal pusztán gyakorlásra szolgál</p>
+	</footer>
+	<script src="../gep.js">
+	</script>
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js">
+	</script>
+	<script src="jquery.validate.min.js">
+	</script>
+	<script>
+		$(document).ready(function () {
+			$('#myform').on('submit', function (event) {
+				// Ellenőrizzük, hogy a "Piros" szín van-e kiválasztva
+				if ($('#kocsi').val() !== 'Piros') {
+					alert('Nem olyan sznű a kocsi!');
+					event.preventDefault();  // Megakadályozzuk az űrlap elküldését
+				}
+			});
+			$("#myform").validate({
+				rules: {
+					nev: "required"
+					,
+					email: {
+						required: true,
+						email: true,
+					},
+					tel: {
+						required: true,
+						tel: true,
+					},
+					nem_robot: "required"
+					,
+				},
+				messages: {
+					nev: "Írd be a nevedet!"
+					,
+					tel: "Írd be a telefonszámodat!"
+					,
+					email: "Kérlek valós email címet adj meg!"
+					,
+					nem_robot: "Biztos robot vagy?"
+					,
+				}
+			});
+		});
+	</script>
+</body>
+
+</HTML>
